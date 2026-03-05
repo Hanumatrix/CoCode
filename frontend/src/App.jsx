@@ -1,6 +1,10 @@
 import "./App.css";
 import {
-  SignInButton
+  SignInButton,
+  SignOutButton,
+  UserButton,
+  SignedOut,
+  SignedIn,
 } from "@clerk/react";
 
 function App() {
