@@ -1,24 +1,14 @@
 import "./App.css";
-import {
-  SignInButton,
-  SignOutButton,
-  UserButton,
-  SignedOut,
-  SignedIn,
-} from "@clerk/react";
+import { SignInButton, SignOutButton, UserButton, useUser } from "@clerk/react";
 
 function App() {
+  const { user } = useUser();
+
   return (
     <>
       <h1>Welcome to CoCode</h1>
 
-      <SignedOut>
-        <SignInButton mode="modal" />
-      </SignedOut>
-
-      <SignedIn>
-        <SignOutButton />
-      </SignedIn>
+      {!user ? <SignInButton mode="modal" /> : <SignOutButton />}
 
       <UserButton />
     </>
